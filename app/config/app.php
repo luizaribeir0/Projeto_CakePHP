@@ -75,7 +75,7 @@ return [
      *   You should treat it as extremely sensitive data.
      */
     'Security' => [
-        'salt' => env('SECURITY_SALT'),
+        'salt' => env('SECURITY_SALT', '985577eed2101228c50d70181510c4570c46d86cea8fcc02a0d54a5eada56bae'),
     ],
 
     /*
@@ -280,9 +280,10 @@ return [
          */
         'default' => [
             'className' => Connection::class,
-            'driver' => Mysql::class,
+            'driver' => \Cake\Database\Driver\Sqlite::class,
             'persistent' => false,
             'timezone' => 'UTC',
+            'database' => '/home/luiza/Trabalho/Projeto_CakePHP/database/banco.sqlite',
 
             /*
              * For MariaDB/MySQL the internal default changed from utf8 to utf8mb4, aka full utf-8 support, in CakePHP 3.6

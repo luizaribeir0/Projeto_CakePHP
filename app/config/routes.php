@@ -57,6 +57,18 @@ return function (RouteBuilder $routes): void {
          */
         $builder->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
 
+        $builder->connect('/cliente', ['controller' => 'Cliente', 'action' => 'index']);
+        $builder->connect('/cliente/view/*', ['controller' => 'Cliente', 'action' => 'view']);
+        $builder->connect('/cliente/add', ['controller' => 'Cliente', 'action' => 'add']);
+        $builder->connect('/cliente/edit/*', ['controller' => 'Cliente', 'action' => 'edit']);
+        $builder->connect('/cliente/delete/*', ['controller' => 'Cliente', 'action' => 'delete']);
+
+        $builder->connect('/carro', ['controller' => 'Carro', 'action' => 'index']);
+        $builder->connect('/carro/view/*', ['controller' => 'Carro', 'action' => 'view']);
+        $builder->connect('/carro/add', ['controller' => 'Carro', 'action' => 'add']);
+        $builder->connect('/carro/edit/*', ['controller' => 'Carro', 'action' => 'edit']);
+        $builder->connect('/carro/delete/*', ['controller' => 'Carro', 'action' => 'delete']);
+
         /*
          * ...and connect the rest of 'Pages' controller's URLs.
          */
