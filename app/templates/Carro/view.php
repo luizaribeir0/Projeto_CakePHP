@@ -24,7 +24,7 @@
                 </tr>
                 <tr>
                     <th><?= __('Cliente') ?></th>
-                    <td><?= $carro->hasValue('cliente') ? $this->Html->link($carro->cliente->id, ['controller' => 'Cliente', 'action' => 'view', $carro->cliente->id]) : 'Disponível' ?></td>
+                    <td><?= $carro->hasValue('cliente') ? $this->Html->link($carro->cliente->nome, ['controller' => 'Cliente', 'action' => 'view', $carro->cliente->id]) : 'Disponível' ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Totalmente Pago') ?></th>

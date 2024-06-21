@@ -10,6 +10,9 @@ msgstr "Remover"
 msgid "New"
 msgstr "Novo"
 
+msgid "View"
+msgstr "Ver"
+
 msgid "Actions"
 msgstr "Ações"
 

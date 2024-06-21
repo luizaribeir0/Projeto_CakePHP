@@ -26,8 +26,8 @@
                     echo $this->Form->control('cpf');
                     echo $this->Form->control('email');
                     echo $this->Form->control('numero');
-                    echo $this->Form->control('devedor', ['type' => 'checkbox']);
-                    echo $this->Form->control('pagou_tudo', ['type' => 'checkbox']);
+                    echo $this->Form->control('devedor', ['type' => 'checkbox', 'value' => 1]);
+                    echo $this->Form->control('pagou_tudo', ['type' => 'checkbox', 'value' => 1]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
