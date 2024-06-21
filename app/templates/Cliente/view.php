@@ -16,7 +16,7 @@
     </aside>
     <div class="column column-80">
         <div class="cliente view content">
-            <h3><?= h($cliente->id) ?></h3>
+            <h3>Cliente</h3>
             <table>
                 <tr>
                     <th><?= __('Nome') ?></th>
@@ -35,17 +35,20 @@
                     <td><?= h($cliente->numero) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Id') ?></th>
-                    <td><?= $this->Number->format($cliente->id) ?></td>
+                    <th><?= __('Devedor') ?></th>
+                    <td><?= $cliente->devedor ? 'Sim' : 'Não' ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Pagou Tudo') ?></th>
+                    <td><?= $cliente->pagou_tudo ? 'Sim' : 'Não' ?></td>
                 </tr>
             </table>
             <div class="related">
-                <h4><?= __('Related Carro') ?></h4>
+                <h4><?= __('Carros') ?></h4>
                 <?php if (!empty($cliente->carro)) : ?>
                 <div class="table-responsive">
                     <table>
                         <tr>
-                            <th><?= __('Id') ?></th>
                             <th><?= __('Nome') ?></th>
                             <th><?= __('Tipo') ?></th>
                             <th><?= __('Marca') ?></th>
@@ -55,7 +58,6 @@
                         </tr>
                         <?php foreach ($cliente->carro as $carro) : ?>
                         <tr>
-                            <td><?= h($carro->id) ?></td>
                             <td><?= h($carro->nome) ?></td>
                             <td><?= h($carro->tipo) ?></td>
                             <td><?= h($carro->marca) ?></td>

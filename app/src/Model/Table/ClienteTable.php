@@ -11,6 +11,8 @@ use Cake\Validation\Validator;
 /**
  * Cliente Model
  *
+ * @property \App\Model\Table\CarroTable&\Cake\ORM\Association\HasMany $Carro
+ *
  * @method \App\Model\Entity\Cliente newEmptyEntity()
  * @method \App\Model\Entity\Cliente newEntity(array $data, array $options = [])
  * @method array<\App\Model\Entity\Cliente> newEntities(array $data, array $options = [])
@@ -40,6 +42,10 @@ class ClienteTable extends Table
         $this->setTable('cliente');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
+
+        $this->hasMany('Carro', [
+            'foreignKey' => 'cliente_id',
+        ]);
     }
 
     /**

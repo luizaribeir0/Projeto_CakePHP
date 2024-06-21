@@ -18,9 +18,9 @@ class ClienteController extends AppController
     public function index()
     {
         $query = $this->Cliente->find();
-        $cliente = $this->paginate($query);
+        $clientes = $this->paginate($query);
 
-        $this->set(compact('cliente'));
+        $this->set(compact('clientes'));
     }
 
     /**
@@ -32,7 +32,7 @@ class ClienteController extends AppController
      */
     public function view($id = null)
     {
-        $cliente = $this->Cliente->get($id, ['Carro']);
+        $cliente = $this->Cliente->get($id, contain: ['Carro']);
         $this->set(compact('cliente'));
     }
 
@@ -65,7 +65,7 @@ class ClienteController extends AppController
      */
     public function edit($id = null)
     {
-        $cliente = $this->Cliente->get($id, []);
+        $cliente = $this->Cliente->get($id, contain: []);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $cliente = $this->Cliente->patchEntity($cliente, $this->request->getData());
             if ($this->Cliente->save($cliente)) {

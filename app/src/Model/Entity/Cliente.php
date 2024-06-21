@@ -13,6 +13,8 @@ use Cake\ORM\Entity;
  * @property string $cpf
  * @property string $email
  * @property string $numero
+ * @property int $devedor
+ * @property int $pagou_tudo
  *
  * @property \App\Model\Entity\Carro[] $carro
  */
@@ -28,10 +30,6 @@ class Cliente extends Entity
      * @var array<string, bool>
      */
     protected array $_accessible = [
-        'nome' => true,
-        'cpf' => true,
-        'email' => true,
-        'numero' => true,
-        'carro' => true,
+        '*' => true,
     ];
 }

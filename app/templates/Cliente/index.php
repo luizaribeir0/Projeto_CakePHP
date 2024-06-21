@@ -1,7 +1,7 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var iterable<\App\Model\Entity\Cliente> $cliente
+ * @var iterable<\App\Model\Entity\Cliente> $clientes
  */
 ?>
 <div class="cliente index content">
@@ -20,7 +20,7 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($cliente as $cliente): ?>
+                <?php foreach ($clientes as $cliente): ?>
                 <tr>
                     <td><?= $this->Number->format($cliente->id) ?></td>
                     <td><?= h($cliente->nome) ?></td>
