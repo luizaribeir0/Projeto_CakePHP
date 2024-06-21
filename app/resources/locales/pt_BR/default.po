@@ -1,0 +1,89 @@
+msgid "Submit"
+msgstr "Enviar"
+
+msgid "Are you sure you want to delete # {0}?"
+msgstr "Você tem certeza que deseja remover # {0}?"
+
+msgid "Delete"
+msgstr "Remover"
+
+msgid "New"
+msgstr "Novo"
+
+msgid "Actions"
+msgstr "Ações"
+
+msgid "Add"
+msgstr "Adicionar"
+
+msgid "Edit"
+msgstr "Editar"
+
+msgid "List Cliente"
+msgstr "Listar Clientes"
+
+msgid "Add Cliente"
+msgstr "Adicionar Cliente"
+
+msgid "Edit Cliente"
+msgstr "Editar Cliente"
+
+msgid "Delete Cliente"
+msgstr "Remover Cliente"
+
+msgid "New Cliente"
+msgstr "Novo Cliente"
+
+msgid "New Carro"
+msgstr "Novo Carro"
+
+msgid "Add Carro"
+msgstr "Adicionar Carro"
+
+msgid "Edit Carro"
+msgstr "Editar Carro"
+
+msgid "List Carro"
+msgstr "Listar Carros"
+
+msgid "Delete Carro"
+msgstr "Remover Carro"
+
+msgid "The carro has been saved."
+msgstr "O carro foi salvo."
+
+msgid "The carro could not be saved. Please, try again."
+msgstr "O carro não pode ser salvo. Por favor, tente novamente."
+
+msgid "The carro has been deleted."
+msgstr "O carro foi removido."
+
+msgid "The carro could not be deleted. Please, try again."
+msgstr "O carro não pode ser removido. Por favor, tente novamente."
+
+msgid "The cliente has been saved."
+msgstr "O cliente foi salvo."
+
+msgid "The cliente could not be saved. Please, try again."
+msgstr "O cliente não pode ser salvo. Por favor, tente novamente."
+
+msgid "The cliente has been deleted."
+msgstr "O cliente foi removido."
+
+msgid "The cliente could not be deleted. Please, try again."
+msgstr "O cliente não pode ser removido. Por favor, tente novamente."
+
+msgid "Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total"
+msgstr "Página {{page}} de {{pages}}, visualizando {{current}} linha(s) de um total de {{count}}."
+
+msgid "first"
+msgstr "primeiro"
+
+msgid "next"
+msgstr "próximo"
+
+msgid "last"
+msgstr "último"
+
+msgid "previous"
+msgstr "anterior"
