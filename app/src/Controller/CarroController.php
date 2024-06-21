@@ -17,10 +17,11 @@ class CarroController extends AppController
      */
     public function index()
     {
-        $query = $this->Carro->find();
-        $carro = $this->paginate($query);
+        $query = $this->Carro->find()
+            ->contain(['Cliente']);
+        $carros = $this->paginate($query);
 
-        $this->set(compact('carro'));
+        $this->set(compact('carros'));
     }
 
     /**
@@ -32,7 +33,7 @@ class CarroController extends AppController
      */
     public function view($id = null)
     {
-        $carro = $this->Carro->get($id, []);
+        $carro = $this->Carro->get($id, contain: ['Cliente']);
         $this->set(compact('carro'));
     }
 
@@ -53,7 +54,12 @@ class CarroController extends AppController
             }
             $this->Flash->error(__('The carro could not be saved. Please, try again.'));
         }
-        $this->set(compact('carro'));
+        $clientes = $this->Carro->Cliente->find('list', [
+            'keyField' => 'id',
+            'valueField' => 'nome',
+            'limit' => 200
+        ])->all()->toArray();
+        $this->set(compact('carro', 'clientes'));
     }
 
     /**
@@ -65,7 +71,7 @@ class CarroController extends AppController
      */
     public function edit($id = null)
     {
-        $carro = $this->Carro->get($id, []);
+        $carro = $this->Carro->get($id, contain: []);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $carro = $this->Carro->patchEntity($carro, $this->request->getData());
             if ($this->Carro->save($carro)) {
@@ -75,7 +81,12 @@ class CarroController extends AppController
             }
             $this->Flash->error(__('The carro could not be saved. Please, try again.'));
         }
-        $this->set(compact('carro'));
+        $clientes = $this->Carro->Cliente->find('list', [
+            'keyField' => 'id',
+            'valueField' => 'nome',
+            'limit' => 200
+        ])->all()->toArray();
+        $this->set(compact('carro', 'clientes'));
     }
 
     /**

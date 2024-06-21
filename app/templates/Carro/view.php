@@ -16,8 +16,20 @@
     </aside>
     <div class="column column-80">
         <div class="carro view content">
-            <h3><?= h($carro->id) ?></h3>
+            <h3>Carro</h3>
             <table>
+                <tr>
+                    <th><?= __('Id') ?></th>
+                    <td><?= $this->Number->format($carro->id) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Cliente') ?></th>
+                    <td><?= $carro->hasValue('cliente') ? $this->Html->link($carro->cliente->id, ['controller' => 'Cliente', 'action' => 'view', $carro->cliente->id]) : 'Disponível' ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Totalmente Pago') ?></th>
+                    <td><?= $carro->totalmente_pago ? 'Sim' : 'Não' ?></td>
+                </tr>
                 <tr>
                     <th><?= __('Nome') ?></th>
                     <td><?= h($carro->nome) ?></td>
@@ -33,10 +45,6 @@
                 <tr>
                     <th><?= __('Cor') ?></th>
                     <td><?= h($carro->cor) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Id') ?></th>
-                    <td><?= $this->Number->format($carro->id) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Ano') ?></th>

@@ -11,6 +11,8 @@ use Cake\Validation\Validator;
 /**
  * Carro Model
  *
+ * @property \App\Model\Table\ClienteTable&\Cake\ORM\Association\BelongsTo $Cliente
+ *
  * @method \App\Model\Entity\Carro newEmptyEntity()
  * @method \App\Model\Entity\Carro newEntity(array $data, array $options = [])
  * @method array<\App\Model\Entity\Carro> newEntities(array $data, array $options = [])
@@ -40,6 +42,10 @@ class CarroTable extends Table
         $this->setTable('carro');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
+
+        $this->belongsTo('Cliente', [
+            'foreignKey' => 'cliente_id',
+        ]);
     }
 
     /**
@@ -75,6 +81,24 @@ class CarroTable extends Table
             ->requirePresence('cor', 'create')
             ->notEmptyString('cor');
 
+        $validator
+            ->integer('cliente_id')
+            ->allowEmptyString('cliente_id');
+
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules): RulesChecker
+    {
+        $rules->add($rules->existsIn(['cliente_id'], 'Cliente'), ['errorField' => 'cliente_id']);
+
+        return $rules;
     }
 }

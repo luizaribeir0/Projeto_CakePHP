@@ -14,6 +14,8 @@ use Cake\ORM\Entity;
  * @property string $marca
  * @property int $ano
  * @property string $cor
+ * @property int|null $cliente_id
+ * @property int $totalmente_pago
  *
  * @property \App\Model\Entity\Cliente $cliente
  */
@@ -29,11 +31,6 @@ class Carro extends Entity
      * @var array<string, bool>
      */
     protected array $_accessible = [
-        'nome' => true,
-        'tipo' => true,
-        'marca' => true,
-        'ano' => true,
-        'cor' => true,
-        'cliente' => true,
+        '*' => true,
     ];
 }

@@ -2,6 +2,7 @@
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Carro $carro
+ * @var \Cake\Collection\CollectionInterface|string[] $clientes
  */
 ?>
 <div class="row">
@@ -22,6 +23,7 @@
                     echo $this->Form->control('marca');
                     echo $this->Form->control('ano');
                     echo $this->Form->control('cor');
+                    echo $this->Form->control('cliente_id', ['options' => $clientes, 'empty' => 'Disponível']);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
