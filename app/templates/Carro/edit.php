@@ -29,7 +29,7 @@
                     echo $this->Form->control('ano');
                     echo $this->Form->control('cor');
                     echo $this->Form->control('cliente_id', ['options' => $clientes, 'empty' => 'Disponível']);
-                    echo $this->Form->control('totalmente_pago', ['type' => 'checkbox', 'value' => 1]);
+                    echo $this->Form->control('totalmente_pago', ['type' => 'select', 'options' => [0 => 'Não', 1 => 'Sim']]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

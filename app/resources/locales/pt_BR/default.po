@@ -75,18 +75,3 @@ msgstr "O cliente foi removido."
 
 msgid "The cliente could not be deleted. Please, try again."
 msgstr "O cliente não pode ser removido. Por favor, tente novamente."
-
-msgid "Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total"
-msgstr "Página {{page}} de {{pages}}, visualizando {{current}} linha(s) de um total de {{count}}."
-
-msgid "first"
-msgstr "primeiro"
-
-msgid "next"
-msgstr "próximo"
-
-msgid "last"
-msgstr "último"
-
-msgid "previous"
-msgstr "anterior"

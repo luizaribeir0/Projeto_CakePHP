@@ -24,7 +24,6 @@
                     echo $this->Form->control('ano');
                     echo $this->Form->control('cor');
                     echo $this->Form->control('cliente_id', ['options' => $clientes, 'empty' => 'Disponível']);
-                    echo $this->Form->hidden('totalmente_pago', ['type' => 'checkbox', 'value' => 0]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
