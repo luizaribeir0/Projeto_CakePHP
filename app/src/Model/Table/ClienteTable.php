@@ -64,7 +64,9 @@ class ClienteTable extends Table
         $validator
             ->scalar('cpf')
             ->requirePresence('cpf', 'create')
-            ->notEmptyString('cpf');
+            ->notEmptyString('cpf')
+            ->add('cpf', 'unique', ['rule' => 'validateUnique', 'provider' => 'table'])
+            ->add('cpf', 'valido', ['rule' => [$this, 'validarCPF'], 'message' => 'Preencha corretamente o CPF!']);
 
         $validator
             ->email('email')
@@ -74,8 +76,39 @@ class ClienteTable extends Table
         $validator
             ->scalar('numero')
             ->requirePresence('numero', 'create')
-            ->notEmptyString('numero');
+            ->notEmptyString('numero')
+            ->add('numero', 'valido', ['rule' => [$this, 'validarNumero'], 'message' => 'Preencha corretamente o número de telefone!']);
 
         return $validator;
+    }
+
+    public function validarCPF($value, array $context): bool
+    {
+        $cpf = preg_replace('/[^0-9]/is', '', $value);
+
+        if (strlen($cpf) != 11) {
+            return false;
+        }
+
+        if (preg_match('/(\d)\1{10}/', $cpf)) {
+            return false;
+        }
+
+        for ($t = 9; $t < 11; $t++) {
+            for ($d = 0, $c = 0; $c < $t; $c++) {
+                $d += $cpf[$c] * (($t + 1) - $c);
+            }
+            $d = ((10 * $d) % 11) % 10;
+            if ($cpf[$c] != $d) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public function validarNumero($value, array $context): bool
+    {
+        return (bool)preg_match('/^(\+?\d{1,3}? ?)?(\(0?\d{2}\) ?)?9?\d{4}[-. ]?\d{4}$/', $value);
     }
 }

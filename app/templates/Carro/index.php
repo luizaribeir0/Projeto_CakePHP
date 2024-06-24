@@ -25,7 +25,7 @@
                     <td><?= $this->Number->format($carro->id) ?></td>
                     <td><?= h($carro->nome) ?></td>
                     <td><?= h($carro->tipo) ?></td>
-                    <td><?= $this->Number->format($carro->ano) ?></td>
+                    <td><?= $carro->ano ?></td>
                     <td><?= $carro->hasValue('cliente') ? $this->Html->link($carro->cliente->nome, ['controller' => 'Cliente', 'action' => 'view', $carro->cliente->id]) : 'Disponível' ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('Ver'), ['action' => 'view', $carro->id], ['class' => 'btn btn-info btn-sm']) ?>

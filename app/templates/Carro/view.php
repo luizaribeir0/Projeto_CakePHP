@@ -48,7 +48,7 @@
                 </tr>
                 <tr>
                     <th><?= __('Ano') ?></th>
-                    <td><?= $this->Number->format($carro->ano) ?></td>
+                    <td><?= $carro->ano ?></td>
                 </tr>
             </table>
         </div>
