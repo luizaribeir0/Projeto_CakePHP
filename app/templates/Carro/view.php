@@ -57,7 +57,7 @@
 
 <style>
     .view {
-        width: 700px;
+        width: 800px;
         margin-left: 40px;
     }
     .carro.view h3 {

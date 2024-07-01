@@ -53,13 +53,23 @@
             color: #D33F49;
             font-weight: bold;
             font-size: 1.2rem;
-            transition: color 0.3s;
+            transition: color 0.5s;
         }
         .navbar-light .navbar-nav .nav-link:hover {
             color: #512500;
         }
         .main {
             flex: 1;
+        }
+        .btn-bordo {
+            background-color: #ab2a34;
+            color: white;
+            font-weight: bold;
+            border-radius: 0.25rem;
+        }
+        .btn-bordo:hover {
+            background-color: #673542;
+            color: white;
         }
         .footer {
             background-color: #f1e6e6;
